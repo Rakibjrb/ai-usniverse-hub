@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI universe hub</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.3/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main>
+      <section class="container mx-auto py-10 px-4 lg:px-0">
+        <h2 class="text-center text-4xl font-bold">AI Universe HUB</h2>
+        <div class="flex justify-center my-10">
+          <button class="btn btn-primary">Sort by Date</button>
+        </div>
+
+        <!-- cards section -->
+        <div
+          id="cardsContainer"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+        ></div>
+
+        <!-- card modal -->
+        <!-- You can open the modal using ID.showModal() method -->
+        <dialog id="my_modal_4" class="modal">
+          <form method="dialog" class="modal-box w-11/12 max-w-5xl">
+            <!-- dynamic modal data -->
+            <div class="flex justify-between flex-col md:flex-row gap-10">
+              <div
+                id="modalContainer"
+                class="bg-red-200 border border-red-400 p-3 rounded-lg space-y-6 flex-1"
+              >
+                <h2 id="modalTitle" class="text-xl font-bold"></h2>
+                <div id="plans" class="flex justify-between"></div>
+                <div class="flex justify-between">
+                  <div>
+                    <h2 class="text-xl font-bold">Features</h2>
+                    <ul
+                      id="features"
+                      class="mt-4 space-y-2 list-disc ml-5"
+                    ></ul>
+                  </div>
+                  <div>
+                    <h2 class="text-xl font-bold">Integrations</h2>
+                    <ul
+                      id="integrations"
+                      class="mt-4 space-y-2 list-disc ml-5"
+                    ></ul>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="border border-black p-3 rounded-lg flex-1 space-y-3 text-center"
+              >
+                <img
+                  id="modalImage"
+                  src=""
+                  onerror="handleMissingImage(this)"
+                  alt=""
+                />
+                <h2 id="modalRightTitle" class="text-xl font-bold"></h2>
+                <p id="modalRightp"></p>
+              </div>
+            </div>
+            <div class="modal-action">
+              <!-- if there is a button, it will close the modal -->
+              <button class="btn">Close</button>
+            </div>
+          </form>
+        </dialog>
+
+        <!-- show all btn -->
+        <div id="showAllButton" class="flex justify-center mt-8">
+          <button onclick="showAllHandler()" class="btn btn-primary">
+            Show More
+          </button>
+        </div>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
